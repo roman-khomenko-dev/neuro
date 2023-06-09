@@ -53,7 +53,8 @@ defmodule Neuro.MixProject do
       {:nx, " ~> 0.5.3"},
       {:evision, "~> 0.1.31"},
       {:image, "~> 0.31.0"},
-      {:scidata, "~> 0.1.9"}
+      {:tesseract_ocr, "~> 0.1.5"},
+      {:decimal, "~> 2.0"}
     ]
   end
 

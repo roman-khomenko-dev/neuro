@@ -67,22 +67,4 @@ defmodule Neuro.Model do
   def path do
     Path.join(Application.app_dir(:neuro, "priv"), "model.axon")
   end
-
-  def download do
-    Scidata.MNIST.download()
-  end
-
-  def transform_images({binary, type, shape}) do
-    binary
-    |> Nx.from_binary(type)
-    |> Nx.reshape(shape)
-    |> Nx.divide(255)
-  end
-
-  def transform_labels({binary, type, _}) do
-    binary
-    |> Nx.from_binary(type)
-    |> Nx.new_axis(-1)
-    |> Nx.equal(Nx.tensor(Enum.to_list(0..9)))
-  end
 end
